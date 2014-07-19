@@ -1,9 +1,26 @@
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''This script reads a csv file and performs some data based calculations.
+It can calculate the occurence of each unique name found in the file.
+It then scores the names by their positions columnwise.
+Finally it sorts the names in order of their score.'''
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''Required modules.'''
 import csv
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''Scores the input name.
+It multiplies the name with a no. weight according to its index
+Then updates the dic dictionary with new value.'''
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 def score(name,dic,index):
     score = [15,10,5]
     dic[name]+=score[index-1]
-    
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''    
+'''Checks the input name , if that exist in dic dictionary.
+If exist then calls score to update it's score.
+else adds it with a score of 0 and then scores it by calling score().'''
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 def add_entry(name,dic,index):
     if name in dic:
         score(name,dic,index)
@@ -12,16 +29,19 @@ def add_entry(name,dic,index):
         dic[name] = 0
         score(name,dic,index)
         return False
+    
+'''Main Module.'''
 def main():
-    reader = csv.reader(open("C:\Python27\Choose Your Big Buddy - Sheet1.csv"))
+    filename = raw_input("Enter the filename: ")
+    reader = csv.reader(open(filename))
     c=True
     big_buddies = {}
     for row in reader:
-        if c:
+        if c:                  #To ignore the header row.
            c=False
         else:
             for i, col in enumerate(row):
                 if i != 0:
                     add_entry(col,big_buddies,i)
-    return big_buddies                
+    return sorted(big_buddies,key=big_buddies.get,reverse = True)  #sorted in order of values              
 print main()
