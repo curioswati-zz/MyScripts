@@ -1,6 +1,7 @@
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '''This script reads a csv file and performs some data based calculations.
-It can calculate the occurence of each unique name found in the file.
+It creates a dictionary of unique names found in file.
+but not includes names in first column of each row.
 It then scores the names by their positions columnwise.
 Finally it sorts the names in order of their score.'''
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -9,7 +10,7 @@ import csv
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '''Scores the input name.
-It multiplies the name with a no. weight according to its index
+It multiplies the name with a integer according to its index
 Then updates the dic dictionary with new value.'''
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 def score(name,dic,index):
