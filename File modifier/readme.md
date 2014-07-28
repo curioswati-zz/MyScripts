@@ -19,7 +19,7 @@ Standard modules used:
 OS module is used.
 It provides the script with some facilities of os, such as executing commands.
 In the script, it is used for listing files in directories, and checking existence of directories.
-For more information on OS, read the [documentation of OS][]
+For more information on OS, read the [documentation of OS][] .
 
 Restrictions:
 ------------
@@ -31,4 +31,4 @@ It just needs to change the *add_the_text_at* variable so as to provide suitable
 
 Rest and required information is provided in the script itself.
 
-[documentation of OS]:[https://docs.python.org/2/library/os.html]
+[documentation of OS]: https://docs.python.org/2/library/os.html
