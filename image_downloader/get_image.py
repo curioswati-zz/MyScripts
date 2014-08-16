@@ -53,22 +53,15 @@ def get_all_images(home,page,dir_):
     It calls get_image to get a url in the page.
     one by one collects urls and downloads the images using wget.''
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    os.chdir(dir_)
     while True:
         url,end = get_image(page)
         i=1
         if url:
             if url.endswith(".jpg") or url.endswith(".jpeg"):
-                os.system(r'C:\"Program Files (x86)"\GnuWin32\bin\wget '+url)
-##                if not url.startswith("http"):
-##                    url=home+url[2:]
-##                image = get_page(url)
-##                if image:
-##                    name = extract_name(url)
-##                    files = open(dir_+"\\"+name, 'wb')
-##                    files.write(image)
-##                    files.close()
-##                
+                if not url.startswith("http"):
+                    url=home+url[2:]
+                name = extract_name(url)  
+                urllib.urlretrieve(url,dir_+name)
             page = page[end:]
         else:
             break
