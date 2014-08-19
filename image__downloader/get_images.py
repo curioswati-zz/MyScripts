@@ -7,9 +7,9 @@ url = raw_input("Enter the url: ")
 dir_ = raw_input("Enter the directory, where you want to save: ")
 
 if not os.path.isdir(dir_):
-	os.system(r'sudo md '+dir_)
-    #os.mkdir(dir_)
-    
+	print dir_
+	os.mkdir(dir_)
+
 def get_image_url(page):
     """
     Returns image urls found on web page. 
@@ -63,7 +63,7 @@ def main(home_url,dir_):
                         url = home_url+url[2:]
                     name = extract_name(url)
                     print name
-                    urllib.urlretrieve(url,name)
+                    urllib.urlretrieve(url,dir_+"/"+name)
                 page = page[end:]
             else:
                 break
