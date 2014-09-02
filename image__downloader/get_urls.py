@@ -8,7 +8,7 @@ It imports:
 
 It defines:
   -main
-  -gte_all_links
+  -get_all_links
   -get_next_url
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 ''''''''''''''''''''''''''
