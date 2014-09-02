@@ -23,6 +23,10 @@ For more information on OS, read the [documentation of OS][] .
 urllib provides a high level interface for fetching data across the world wide web.
 For more information on OS, read the [documentation of urllib][]
 
+Restrictions:
+-------------
+Only downloads JPG and JPEG images.
+
 Rest and required information is provided in the script itself.
 
 [documentation of OS]: https://docs.python.org/2/library/os.html
