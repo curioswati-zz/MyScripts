@@ -8,7 +8,6 @@ It import:
 import wx
 from class_Mypanel import Mypanel
 
-print 'creating app object'
 app = wx.App()
 
 #window object

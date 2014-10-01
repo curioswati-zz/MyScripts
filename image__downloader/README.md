@@ -4,7 +4,6 @@ get_image.py is a python script created for downloading pictures from web pages.
 Problem statement :
 ----------------- 
 To create a script which can download images from web pages provided one URL.
-Should go through all the links mentioned on that URL and also download images from there.
 
 Instructions:
 ------------
