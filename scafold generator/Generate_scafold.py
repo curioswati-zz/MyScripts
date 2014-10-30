@@ -2,6 +2,10 @@
 '''The script is a project scafold generator.
 It creates all the neccesary files and subdirectories.'''
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''Required Modules'''
+''''''''''''''''''''''''''''''''''''''''''''
+import os,sys
+''''''''''''''''''''''''''''''''''''''''''''
 root = sys.argv[1]
 Primary_root_files = [".htaccess","version.txt","ti.php","index.php","README.md"] 
 Primary_root_dirs = ["assets","app","bin","changelog","config","db","docs","log","lib","public","test","tmp"]
@@ -9,11 +13,6 @@ primary_assets = ["css","img","js","others"]
 app_sub_dirs = ["assets","folder_one","folder_two","folder_n-1","folder_n"]
 folders_in_app_sub_dirs = ["db","assets","others"]
 files_in_app_sub_dirs = ["config.php","folder_one.php"]
-
-''''''''''''''''''''''''''''''''''''''''''''
-'''Required Modules'''
-''''''''''''''''''''''''''''''''''''''''''''
-import os,sys
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 '''creating a file with the input name in the input dir'''
